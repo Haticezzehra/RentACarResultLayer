@@ -11,5 +11,5 @@ namespace Entities.Concretes
     {
         public int id { get; set; }
         public string BrandName { get; set; }
-    }
 }
+    }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Concretes;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace DataAccess.Concretes.EntityFramework
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RentACar;Trusted_Connection=true");
         }
 
-
+        public DbSet<Car> Car { get; set; }    
+        public DbSet<Brand> Brand { get; set; }
+        public DbSet<Color> Color { get; set; }
     }
 }

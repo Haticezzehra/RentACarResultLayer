@@ -16,6 +16,7 @@ namespace Entities.Concretes
         public int DailyPrice { get; set; }
         public string Description { get; set; }
 
-        
+       
+       
     }
 }

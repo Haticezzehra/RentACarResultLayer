@@ -21,6 +21,11 @@ namespace DataAccess.Concretes.EntityFramework
             throw new NotImplementedException();
         }
 
+        public Brand Get(Expression<Func<Brand, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Brand> GetAll()
         {
             throw new NotImplementedException();

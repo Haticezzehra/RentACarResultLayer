@@ -31,24 +31,36 @@ namespace DataAccess.Concretes.EntityFramework
             }
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using (RentACarContext context = new RentACarContext())
+            {
+                return context.Set<Car>().SingleOrDefault(filter);
+            }
         }
 
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using (RentACarContext context = new RentACarContext())
+            {
+                return filter==null ? 
+                    context.Set<Car>().ToList():
+                    context.Set<Car>().Where(filter).ToList();
+            }
         }
 
-        public List<Car> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+    
+
+      
 
         public void Update(Car car)
         {
-            throw new NotImplementedException();
+            using (RentACarContext context = new RentACarContext())
+            {
+                var updateEntity = context.Entry(car);
+                updateEntity.State=EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }

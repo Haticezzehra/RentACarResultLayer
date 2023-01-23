@@ -9,9 +9,6 @@ namespace DataAccess.Abstract
 {
     public  interface IColorDal:IEntityRepository<Color>
     {
-        List<Color> GetAll();
-        void Add(Color color);
-        void Delete(Color color);
-        void Update(Color color );
+      
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes.EntityFramework
 {
+    //Context dosyası uygulamamızdaki nesnelerimizle veritabanındaki tabloları ilişkilendirir.
     public class RentACarContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -16,7 +17,7 @@ namespace DataAccess.Concretes.EntityFramework
         }
 
         public DbSet<Car> Car { get; set; }
-        public DbSet<Brand> Brand { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Color> Color { get; set; }
     }
 }

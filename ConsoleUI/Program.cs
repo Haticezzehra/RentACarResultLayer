@@ -14,18 +14,41 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EfCarDal());
+            /* carManager.Delete(new Car()
+             {
+                 Id = 2,
+                 BrandId = 4,
+                 ColorId = 3,
+                 DailyPrice = 550,
+                 Description = "Audi",
+                 ModelYear = 2022
 
+
+             });*/
             carManager.Add(new Car()
             {
-                Id=1,
-               BrandId=4,
-               ColorId=3,
-               DailyPrice=550,
-               Description="Audi",
-               ModelYear=2022
-               
-             
+                Id = 2,
+                BrandId = 4,
+                ColorId = 3,
+                DailyPrice = 550,
+                Description = "Audi",
+                ModelYear = 2022
+
+
             });
+            carManager.Update(new Car()
+            {
+                Id = 2,
+                BrandId = 4,
+                ColorId = 3,
+                DailyPrice = 550,
+                Description = "Mercedes",
+                ModelYear = 2022
+
+
+            });
+
+         
            
 
         

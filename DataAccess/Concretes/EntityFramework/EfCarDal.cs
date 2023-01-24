@@ -18,6 +18,7 @@ namespace DataAccess.Concretes.EntityFramework
             {
                 var addEntity = context.Entry(car);
                 addEntity.State = EntityState.Added;
+
             }
         }
 

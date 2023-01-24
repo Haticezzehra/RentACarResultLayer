@@ -5,9 +5,7 @@
  Car, Brand ve Color nesneleri için Entity Framework altyapısını yazınız.</br>
  GetCarsByBrandId , GetCarsByColorId servislerini yazınız.</br>
 Sisteme yeni araba eklendiğinde aşağıdaki kuralları çalıştırınız.</br>
-
 - Araba ismi minimum 2 karakter olmalıdır</br>
-
--Araba günlük fiyatı 0'dan büyük olmalıdır.</br>
+- Araba günlük fiyatı 0'dan büyük olmalıdır.</br>
 
 

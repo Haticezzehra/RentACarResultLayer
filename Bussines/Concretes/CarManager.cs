@@ -19,13 +19,13 @@ namespace Business.Concretes
 
         public void Add(Car car)
         {
-            if(car.DailyPrice>0&& car.Description.Length >= 2)
+            if(car.DailyPrice>0 && car.Description.Length > 2)
             {
-                carDal.Add(car);
+                carDal.Add(car); 
             }
             else
             {
-                Console.WriteLine("Araba özelliklerini hatalı girdiniz.");
+               throw new Exception ("Araba özelliklerini hatalı girdiniz.");
             }
            
         }

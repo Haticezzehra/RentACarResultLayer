@@ -17,7 +17,7 @@ namespace DataAccess.Concretes.EntityFramework
             using (RentACarContext context = new RentACarContext())//Using kullanımı newlenen nesneyi kullanıktan sonr siler
             {
                 var addEntity = context.Entry(car);
-                addEntity.State=EntityState.Added;
+                addEntity.State = EntityState.Added;
             }
         }
 
@@ -43,22 +43,20 @@ namespace DataAccess.Concretes.EntityFramework
         {
             using (RentACarContext context = new RentACarContext())
             {
-                return filter==null ? 
-                    context.Set<Car>().ToList():
+                return filter == null ?
+                    context.Set<Car>().ToList() :
                     context.Set<Car>().Where(filter).ToList();
             }
         }
 
-    
 
-      
 
         public void Update(Car car)
         {
             using (RentACarContext context = new RentACarContext())
             {
                 var updateEntity = context.Entry(car);
-                updateEntity.State=EntityState.Modified;
+                updateEntity.State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

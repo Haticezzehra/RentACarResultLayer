@@ -14,7 +14,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            /* carManager.Delete(new Car()
+            carManager.Delete(new Car()
              {
                  Id = 2,
                  BrandId = 4,

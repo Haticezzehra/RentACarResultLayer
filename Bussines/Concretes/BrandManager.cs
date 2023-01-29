@@ -19,17 +19,17 @@ namespace Business.Concretes
         }
         public void Add(Brand brand)
         {
-            throw new NotImplementedException();
+           brandDal.Add(brand);
         }
 
         public void Delete(Brand brand)
         {
-            throw new NotImplementedException();
+            brandDal.Delete(brand);
         }
 
         public List<Brand> GetAll()
         {
-            return brandDal.GetAll();
+            brandDal.GetAll();
         }
 
         public Brand GetById(int BrandId)
@@ -40,7 +40,7 @@ namespace Business.Concretes
 
         public void Update(Brand brand)
         {
-            throw new NotImplementedException();
+           brandDal.Update(brand);
         }
     }
 }

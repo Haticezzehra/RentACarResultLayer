@@ -32,6 +32,7 @@ namespace Business.Concretes
 
         public void Delete(Car car)
         {
+            
            carDal.Delete(car);  
         }
 
@@ -45,14 +46,14 @@ namespace Business.Concretes
             return carDal.Get(p=>p.Id==id);
         }
 
-        /*public List<Car> GetCarsByBrandId(int brandId)
+        public List<Car> GetCarsByBrandId(int brandId)
         {
             return carDal.GetAll(p=>p.BrandId== brandId);
         }
         public List<Car> GetCarsByColorId(int colorId)
         {
             return carDal.GetAll(p => p.ColorId==colorId);
-        }*/
+        }
 
         public void Update(Car car)
         {

@@ -29,7 +29,7 @@ namespace Business.Concretes
 
         public List<Brand> GetAll()
         {
-            brandDal.GetAll();
+           return  brandDal.GetAll();
         }
 
         public Brand GetById(int BrandId)

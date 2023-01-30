@@ -49,7 +49,7 @@ namespace Business.Concretes
 
         public List<CarDetailDto> GetCarDetails()
         {
-            carDal.GetCarDetails();
+         return   carDal.GetCarDetails();
         }
 
         public List<Car> GetCarsByBrandId(int brandId)

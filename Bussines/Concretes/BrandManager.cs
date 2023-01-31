@@ -13,7 +13,7 @@ namespace Business.Concretes
     {
         IBrandDal brandDal;
 
-        void BranManager(IBrandDal brandDal)
+        public BrandManager(IBrandDal brandDal)
         {
             this.brandDal = brandDal;
         }

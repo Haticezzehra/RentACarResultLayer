@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Business.Concretes
 {
-    internal class ColorManager : IColorService
+    public class ColorManager : IColorService
     {
         IColorDal colorDal;
-         ColorManager(IColorDal colorDal)
+        public ColorManager(IColorDal colorDal)
         {
             this.colorDal= colorDal;
         }

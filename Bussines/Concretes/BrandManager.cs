@@ -47,6 +47,6 @@ namespace Business.Concretes
             return new SuccessResult("Marka guncellendi");
         }
 
-      
+
     }
 }

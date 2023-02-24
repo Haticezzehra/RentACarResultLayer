@@ -11,63 +11,64 @@ using System.Threading.Tasks;
 
 namespace Business.Concretes
 {
-    public class CarManager :ICarService
+    public class CarManager : ICarService
     {
         ICarDal carDal;
         public CarManager(ICarDal carDal)
         {
-           this.carDal = carDal;    
+            this.carDal = carDal;
         }
 
-       public IResult  Add(Car car)
+        public IResult Add(Car car)
         {
-            if(car.DailyPrice>0 && car.Description.Length > 2)
-            {
-                
-                carDal.Add(car); 
-                return new SuccesResult
-            }
-            else
+            if (car.DailyPrice > 0 && car.Description.Length > 2)
             {
 
-               //throw new Exception ("Araba özelliklerini hatalı girdiniz.");
+                carDal.Add(car);
+                return new SuccessResult("Ekleme Baasarili");
             }
-           
+            return new ErrorResult("Ekleme Başarısız");
+
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
-            
-           carDal.Delete(car);  
+
+            carDal.Delete(car);
+            return new SuccessResult("Silme basarili");
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-          return carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(carDal.GetAll(), "Listelendi");
         }
 
-        public Car GetById(int id)
+        public IDataResult<Car> GetById(int id)
         {
-            return carDal.Get(p=>p.Id==id);
+            return new SuccessDataResult<Car>(carDal.Get(p => p.Id == id), "Araba getirildi");
+
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-         return   carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(carDal.GetCarDetails(), "Araba detayları listelendi.");
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
+        public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
-            return carDal.GetAll(p=>p.BrandId== brandId);
+            return new SuccessDataResult<List<Car>>(carDal.GetAll(p => p.BrandId == brandId), "Araba getirildi");
         }
-        public List<Car> GetCarsByColorId(int colorId)
+        public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
-            return carDal.GetAll(p => p.ColorId==colorId);
+            return new SuccessDataResult<List<Car>>(carDal.GetAll(p => p.ColorId == colorId), "Araba getirildi");
+
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
-           carDal.Update(car);
+            carDal.Update(car);
+            return new SuccessResult("Araba güncellendi");
+
         }
     }
 }

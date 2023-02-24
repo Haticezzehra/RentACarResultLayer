@@ -2,6 +2,7 @@
 using DataAccess.Abstract;
 using Entities.Concretes;
 using Entities.DTOs;
+using Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,15 +19,18 @@ namespace Business.Concretes
            this.carDal = carDal;    
         }
 
-        public void Add(Car car)
+       public IResult  Add(Car car)
         {
             if(car.DailyPrice>0 && car.Description.Length > 2)
             {
+                
                 carDal.Add(car); 
+                return new SuccesResult
             }
             else
             {
-               throw new Exception ("Araba özelliklerini hatalı girdiniz.");
+
+               //throw new Exception ("Araba özelliklerini hatalı girdiniz.");
             }
            
         }

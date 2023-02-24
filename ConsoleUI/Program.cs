@@ -28,7 +28,7 @@ namespace ConsoleUI
             ColorManager colorManager = new ColorManager(new EfColorDal());
             colorManager.Add(new Color()
             {
-                Id = 4,
+                Id = 5,
                 ColorName = "Purple"
             });
             foreach (var color in colorManager.GetAll())

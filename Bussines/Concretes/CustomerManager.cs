@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Results;
+using DataAccess.Abstract;
 using Entities.Concretes;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,21 @@ namespace Business.Concretes
 {
     public class CustomerManager : ICustomerService
     {
+        ICustomerDal customerDal;
+        public CustomerManager(ICustomerDal customerDal)
+        {
+            this.customerDal = customerDal;
+        }
         public IResult Add(Customer customer)
         {
-            throw new NotImplementedException();
+            customerDal.Add(customer);
+            return new SuccessResult("Müşteri başarılı bir şekilde eklendi");
         }
 
         public IResult Delete(Customer customer)
         {
-            throw new NotImplementedException();
+            customerDal.Delete(customer);
+            return new SuccessResult("Müşteri silindi");
         }
 
         public IDataResult<List<Customer>> GetAll()

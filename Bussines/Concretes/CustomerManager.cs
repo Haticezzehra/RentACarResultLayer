@@ -31,17 +31,18 @@ namespace Business.Concretes
 
         public IDataResult<List<Customer>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Customer>>(customerDal.GetAll());
         }
 
         public IDataResult<Customer> GetById(int CustomerId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Customer>(customerDal.Get(c => c.Id == CustomerId));      
         }
 
         public IResult Update(Customer customer)
         {
-            throw new NotImplementedException();
+           customerDal.Update(customer);
+            return new SuccessResult("Müşteri güncellendi.");
         }
     }
 }
